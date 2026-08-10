@@ -14,7 +14,7 @@ export default function AboutUs() {
           </Link>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">About SwasthyaCare</h1>
           <p className="text-xl text-blue-100/80 max-w-2xl">
-            Bridging the gap between patients and healthcare providers across India with real-time, verified information.
+            Bridging the gap between patients and healthcare providers — doctors, clinics, and ambulances — across India with real-time, verified information.
           </p>
         </div>
       </div>
@@ -30,13 +30,13 @@ export default function AboutUs() {
           </div>
           <div className="space-y-4 text-slate-600 leading-relaxed text-lg">
             <p>
-              SwasthyaCare was founded with a singular vision: <strong className="text-slate-900">to make healthcare accessibility transparent and effortless for every Indian citizen</strong>. We believe that finding an available doctor should never involve guesswork, endless phone calls, or wasted trips to closed clinics.
+              SwasthyaCare was founded with a singular vision: <strong className="text-slate-900">to make healthcare accessibility transparent and effortless for every Indian citizen</strong>. We believe that finding available doctors, open clinics, or emergency ambulances should never involve guesswork, endless phone calls, or wasted trips.
             </p>
             <p>
-              Our platform provides real-time doctor availability information, enabling patients to check who is available near them — right now, today, or any day of the week — before they leave their homes.
+              Our platform provides real-time availability information, enabling patients to check who is available near them — right now, today, or any day of the week — before they leave their homes or face an emergency.
             </p>
             <p>
-              We are committed to empowering both patients and doctors. Patients get instant access to verified doctor schedules, while doctors get a free digital presence to manage their availability and reach more people in their community.
+              We are committed to empowering both patients and healthcare providers. Patients get instant access to verified schedules and live locations, while providers get a free digital presence to manage their availability and reach more people in their community.
             </p>
           </div>
         </section>
@@ -51,10 +51,10 @@ export default function AboutUs() {
           </div>
           <div className="space-y-4 text-slate-600 leading-relaxed text-lg">
             <p>
-              We envision a future where every person in India — whether in a metropolitan city or a remote village — can instantly know which healthcare professionals are available near them.
+              We envision a future where every person in India — whether in a metropolitan city or a remote village — can instantly know which healthcare professionals and services are available near them.
             </p>
             <p>
-              SwasthyaCare aims to become India's most trusted and widely-used doctor availability platform, covering every state, district, and locality with verified, real-time healthcare data.
+              SwasthyaCare aims to become India's most trusted and widely-used healthcare availability platform, covering every state, district, and locality with verified, real-time data for doctors, clinics, and ambulances.
             </p>
           </div>
         </section>
@@ -69,12 +69,12 @@ export default function AboutUs() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { title: "Real-Time Availability", desc: "We display live doctor availability status — whether a doctor is available, on leave, or not available — updated in real time by the doctors themselves." },
-              { title: "Verified Doctor Profiles", desc: "Every doctor on our platform goes through an admin verification process. We display their qualifications, specialization, experience, hospital details, consultation fees, and weekly schedule." },
-              { title: "Location-Based Search", desc: "Patients can search for doctors by state, district, and area. Our powerful filters let you narrow down by specialization, availability status, and more." },
-              { title: "Weekly Schedule & Leaves", desc: "Doctors set their weekly availability slots and can mark leave days in advance, so patients always have the most up-to-date information." },
-              { title: "No Booking Required", desc: "SwasthyaCare is not a booking platform. We provide information transparency — you check availability and walk in when convenient. No appointments, no waiting queues online." },
-              { title: "100% Free for Everyone", desc: "SwasthyaCare is completely free for both patients and doctors. There are no subscription fees, no hidden charges, and no premium tiers." },
+              { title: "Real-Time Availability", desc: "We display live availability status for doctors and clinics — updated in real time by the providers themselves." },
+              { title: "Ambulance Live Tracking", desc: "Patients can find nearby ambulances with live GPS tracking, ensuring rapid response during emergencies." },
+              { title: "Verified Profiles", desc: "Every doctor, clinic, and ambulance on our platform goes through an admin verification process for authenticity and trust." },
+              { title: "Location-Based Search", desc: "Search for healthcare providers by state, district, and area. Our powerful filters let you narrow down by specialization and availability." },
+              { title: "Clinic Services & Amenities", desc: "Find clinics that offer specific facilities like 24/7 service, diagnostic labs, or particular treatments near you." },
+              { title: "100% Free for Everyone", desc: "SwasthyaCare is completely free for both patients and healthcare providers. There are no subscription fees or hidden charges." },
             ].map((item) => (
               <div key={item.title} className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="font-bold text-slate-900 text-lg mb-2">{item.title}</h3>
@@ -94,7 +94,7 @@ export default function AboutUs() {
           </div>
           <div className="space-y-4 text-slate-600 leading-relaxed text-lg">
             <p>
-              SwasthyaCare is developed and maintained by <strong className="text-slate-900">Jasim Mushtaq</strong>, a passionate developer committed to using technology for social good. The platform was born out of a personal experience — the frustration of traveling to a doctor's clinic only to find it closed without prior notice.
+              SwasthyaCare is developed and maintained by <strong className="text-slate-900">Jasim Mushtaq</strong>, a passionate developer committed to using technology for social good. The platform was born out of personal experiences — the frustration of traveling to closed clinics and struggling to find emergency transport.
             </p>
             <p>
               Built with modern web technologies including React, TypeScript, Supabase, and Tailwind CSS, SwasthyaCare is designed to be fast, reliable, and accessible on any device.
@@ -113,9 +113,9 @@ export default function AboutUs() {
           <div className="space-y-4">
             {[
               { title: "Transparency", desc: "We believe healthcare information should be open and accessible. No hidden fees, no paywalls, no gatekeeping." },
-              { title: "Trust", desc: "Every doctor on our platform is verified by our admin team. We never compromise on the authenticity of the information we display." },
+              { title: "Trust", desc: "Every provider on our platform is verified by our admin team. We never compromise on the authenticity of the information we display." },
               { title: "Accessibility", desc: "Our platform is designed to work on all devices, in all network conditions. Healthcare information should reach everyone, everywhere." },
-              { title: "Privacy", desc: "We respect user privacy and handle personal data with the utmost care. We follow industry best practices for data security." },
+              { title: "Privacy", desc: "We respect user privacy and handle personal data — including live locations — with the utmost care and security." },
               { title: "Community First", desc: "SwasthyaCare exists to serve communities. We are driven by impact, not profit. Our platform is and will remain free for all users." },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 items-start">
@@ -139,10 +139,10 @@ export default function AboutUs() {
           </div>
           <div className="space-y-4 text-slate-600 leading-relaxed text-lg">
             <p>
-              SwasthyaCare currently operates across <strong className="text-slate-900">all 28 states and 8 union territories of India</strong>. Our doctor database includes practitioners from metro cities to rural towns, covering 110+ medical specializations.
+              SwasthyaCare currently operates across <strong className="text-slate-900">all 28 states and 8 union territories of India</strong>. Our database includes doctors, clinics, and ambulances from metro cities to rural towns.
             </p>
             <p>
-              We support <strong className="text-slate-900">22+ Indian languages</strong> in doctor profiles, ensuring that language is never a barrier in healthcare discovery.
+              We support <strong className="text-slate-900">22+ Indian languages</strong> in provider profiles, ensuring that language is never a barrier in healthcare discovery.
             </p>
           </div>
         </section>

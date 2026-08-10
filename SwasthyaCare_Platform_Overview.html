@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwasthyaCare Platform Overview</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        h1 {
+            color: #1e3a8a;
+            text-align: center;
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2563eb;
+            margin-top: 30px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 5px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #111827;
+        }
+        .highlight {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>SwasthyaCare Platform Overview</h1>
+
+    <h2>1. Platform Preview</h2>
+    <p>SwasthyaCare is a modern, responsive, and completely free web-based healthcare platform built to bring unprecedented transparency to India's healthcare system. It bridges the critical information gap between patients and healthcare providers—including doctors, clinics, and ambulances—by providing real-time availability and live location tracking. The platform operates on a "transparency first" model, entirely free of booking mechanics, subscription fees, or hidden costs, empowering citizens to make informed decisions before leaving their homes.</p>
+
+    <h2>2. Summary</h2>
+    <p>SwasthyaCare serves as a centralized, real-time directory for healthcare accessibility across all 28 states and 8 union territories of India. For patients, it eliminates the guesswork of finding an available doctor, an open clinic, or a nearby ambulance during emergencies. For healthcare providers, it offers a zero-cost digital presence to manage their schedules, mark leaves, and communicate their live statuses to the community. By supporting over 22 Indian languages and focusing purely on information transparency, SwasthyaCare democratizes healthcare access for everyone, regardless of their location or technical expertise.</p>
+
+    <h2>3. Problem Being Solved</h2>
+    <p>India's healthcare infrastructure suffers from severe information asymmetry, particularly in tier-2, tier-3 cities, and rural areas:</p>
+    <ul>
+        <li><strong>Wasted Time & Resources:</strong> Patients frequently travel 30-60 minutes to visit a doctor or clinic, only to find a "Closed" or "Doctor on Leave" sign on the door without prior notice.</li>
+        <li><strong>Emergency Chaos:</strong> Finding a nearby, available ambulance during a critical emergency is highly fragmented and stressful.</li>
+        <li><strong>Lack of Digital Presence:</strong> The majority of local doctors and clinics lack an online presence, making it impossible for patients to check consultation hours, fees, or services remotely.</li>
+        <li><strong>No Centralized Directory:</strong> Existing private platforms focus heavily on metropolitan areas and prioritize telemedicine, premium subscriptions, and appointment booking rather than simple, real-time availability.</li>
+    </ul>
+
+    <h2>4. USP (Unique Selling Point)</h2>
+    <div class="highlight">
+        <ul>
+            <li><strong>Real-Time Availability Over Booking:</strong> Unlike competitors, SwasthyaCare doesn't force patients to book appointments online. It simply provides real-time "Available Now" status, allowing patients to walk in with confidence.</li>
+            <li><strong>Ambulance Live Tracking:</strong> Real-time GPS broadcasting for ambulances, allowing patients to locate emergency transport instantly on a live map.</li>
+            <li><strong>100% Free Forever:</strong> No hidden fees, no subscriptions, no premium tiers, and no commissions for both patients and providers.</li>
+            <li><strong>Comprehensive Ecosystem:</strong> Integrates Doctors, Clinics, and Ambulances into a single, unified discovery platform.</li>
+            <li><strong>Inclusivity:</strong> Supports 22+ Indian languages, ensuring language is never a barrier to healthcare access.</li>
+        </ul>
+    </div>
+
+    <h2>5. Key Features</h2>
+    <ul>
+        <li><strong>Real-Time Status Indicators:</strong> Providers can toggle their live status (Available Now, On Leave, Full Capacity, Closed).</li>
+        <li><strong>Location-Based Search & Filters:</strong> Powerful search to find providers by state, district, specialization, services offered, and current availability status.</li>
+        <li><strong>Provider Dashboards:</strong> Dedicated dashboards for doctors and clinics to manage their weekly availability slots and upcoming leaves.</li>
+        <li><strong>Ambulance GPS Broadcasting:</strong> Ambulance drivers can toggle their status to "Available," prompting the app to broadcast their live GPS coordinates to nearby patients.</li>
+        <li><strong>Verified Profiles:</strong> A strict admin verification process ensures that only legitimate, licensed doctors, certified clinics, and registered ambulances are listed on the platform.</li>
+        <li><strong>Detailed Directories:</strong> Comprehensive provider profiles showing hospital affiliations, exact timings, consultation fees, experience, and facilities.</li>
+    </ul>
+
+    <h2>6. Tech Stack</h2>
+    <p>The platform is built using a modern, highly scalable, and performant technology stack:</p>
+    <ul>
+        <li><strong>Frontend Framework:</strong> React 18, TypeScript, Vite</li>
+        <li><strong>Styling & UI:</strong> Tailwind CSS, shadcn/ui, Radix UI Primitives, Lucide Icons</li>
+        <li><strong>Routing & State:</strong> React Router, React Query (TanStack Query)</li>
+        <li><strong>Backend & Database:</strong> Supabase (PostgreSQL), Prisma ORM</li>
+        <li><strong>Authentication:</strong> Supabase Auth (with bcrypt hashing and Row Level Security)</li>
+        <li><strong>Forms & Validation:</strong> React Hook Form, Zod</li>
+        <li><strong>Date/Time Formatting:</strong> date-fns</li>
+    </ul>
+
+    <h2>7. Future Scope</h2>
+    <ul>
+        <li><strong>AI-Powered Symptom Checker:</strong> An integrated AI assistant to guide patients to the correct specialist based on their described symptoms.</li>
+        <li><strong>In-App Messaging:</strong> Secure, privacy-focused messaging between patients and verified providers for quick follow-up questions or test result discussions.</li>
+        <li><strong>Telemedicine Integration:</strong> Optional video consultation features for doctors who wish to offer remote care to rural patients.</li>
+        <li><strong>Blood Bank Directory:</strong> Expanding the platform to include real-time blood availability across regional blood banks and hospitals.</li>
+        <li><strong>Progressive Web App (PWA):</strong> Enhancing the platform to be fully installable on mobile devices with offline capabilities for areas with poor internet connectivity.</li>
+    </ul>
+
+</body>
+</html>

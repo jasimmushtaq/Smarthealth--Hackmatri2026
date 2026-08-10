@@ -40,8 +40,8 @@ export default function PrivacyPolicy() {
             <h3 className="text-xl font-semibold text-slate-800 mt-6 mb-3">2.1 Information You Provide Directly</h3>
             <ul className="list-disc pl-6 text-slate-600 space-y-2">
               <li><strong>Account Information:</strong> When you register, we collect your full name, email address, password (stored in encrypted form), state, and district.</li>
-              <li><strong>Doctor Profile Information:</strong> If you register as a doctor, we additionally collect your specialization, hospital name, room number, area, years of experience, consultation fee, bio, languages spoken, gender, and profile photograph.</li>
-              <li><strong>Availability Data:</strong> Doctors provide their weekly availability slots (day of week, start time, end time) and leave/absence schedules.</li>
+              <li><strong>Provider Profile Information:</strong> If you register as a doctor, clinic, or ambulance driver, we collect relevant details such as specialization, hospital/clinic name, services offered, years of experience, vehicle details (for ambulances), consultation fees, bio, and profile photograph.</li>
+              <li><strong>Availability & Location Data:</strong> Providers submit their weekly availability slots or live statuses. For ambulances, when marked as 'Available', we collect and broadcast live GPS location data to help patients find nearby emergency transport.</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-slate-800 mt-6 mb-3">2.2 Information Collected Automatically</h3>
@@ -55,17 +55,17 @@ export default function PrivacyPolicy() {
             <ul className="list-disc pl-6 text-slate-600 space-y-2">
               <li>We do <strong>not</strong> collect any medical records, health conditions, prescriptions, or treatment history of patients.</li>
               <li>We do <strong>not</strong> collect payment or financial information (credit cards, bank accounts, UPI details) as our platform is entirely free.</li>
-              <li>We do <strong>not</strong> track your precise GPS location. Location data (state, district) is provided voluntarily by you.</li>
+              <li>We do <strong>not</strong> track your precise GPS location unless you are registered as an Ambulance Driver and explicitly mark your status as 'Available'. For patients and other users, location data (state, district) is provided voluntarily.</li>
             </ul>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-slate-900 border-b border-slate-200 pb-3 mb-4">3. How We Use Your Information</h2>
             <ul className="list-disc pl-6 text-slate-600 space-y-2">
-              <li><strong>To provide our services:</strong> Displaying doctor profiles and availability to patients, enabling doctors to manage their schedules.</li>
-              <li><strong>Account management:</strong> Creating and managing your user account, authenticating logins, and assigning user roles (patient, doctor, admin).</li>
-              <li><strong>Profile display:</strong> Doctor profile information (name, specialization, hospital, schedule, photo) is displayed publicly to patients searching for available doctors.</li>
-              <li><strong>Admin verification:</strong> Submitted doctor profiles are reviewed by our admin team for authenticity before being made visible.</li>
+              <li><strong>To provide our services:</strong> Displaying provider profiles, availability, and live locations (for ambulances) to patients, enabling providers to manage their schedules.</li>
+              <li><strong>Account management:</strong> Creating and managing your user account, authenticating logins, and assigning user roles (patient, doctor, clinic, ambulance, admin).</li>
+              <li><strong>Profile display:</strong> Provider profile information (name, specialization, services, schedule, photo, location) is displayed publicly to patients searching for healthcare services.</li>
+              <li><strong>Admin verification:</strong> Submitted provider profiles are reviewed by our admin team for authenticity before being made visible.</li>
               <li><strong>Communication:</strong> Sending important service-related notifications such as account verification emails.</li>
               <li><strong>Service improvement:</strong> Analyzing usage patterns to improve the user experience, fix bugs, and develop new features.</li>
               <li><strong>Legal compliance:</strong> Complying with applicable laws, regulations, and legal processes.</li>
@@ -75,7 +75,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-slate-900 border-b border-slate-200 pb-3 mb-4">4. How We Share Your Information</h2>
             <ul className="list-disc pl-6 text-slate-600 space-y-2">
-              <li><strong>Doctor profiles are public:</strong> If you register as a doctor, your profile information (name, specialization, hospital, schedule, fees, and profile photo) will be visible to all registered users of the platform.</li>
+              <li><strong>Provider profiles are public:</strong> If you register as a doctor, clinic, or ambulance driver, your profile information (name, services, schedule, live location if applicable, and profile photo) will be visible to all registered users of the platform.</li>
               <li><strong>Patient accounts are private:</strong> Patient account information (name, email, state, district) is not shared with other users or third parties.</li>
               <li><strong>Service providers:</strong> We use Supabase for database hosting and authentication, and Cloudinary for image storage. These services process your data on our behalf under their respective privacy policies.</li>
               <li><strong>Legal obligations:</strong> We may disclose your information if required by law, court order, or governmental regulation.</li>

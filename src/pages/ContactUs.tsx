@@ -140,7 +140,7 @@ export default function ContactUs() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="contact-subject">Subject *</Label>
-                    <Input id="contact-subject" value={form.subject} onChange={(e) => setForm(p => ({ ...p, subject: e.target.value }))} required placeholder="What is this regarding?" />
+                    <Input id="contact-subject" value={form.subject} onChange={(e) => setForm(p => ({ ...p, subject: e.target.value }))} required placeholder="E.g., Doctor/Clinic/Ambulance Verification, Bug Report..." />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="contact-message">Message *</Label>
@@ -162,7 +162,7 @@ export default function ContactUs() {
             {[
               { title: "Bug Reports", desc: "Found something broken? Let us know the exact issue, steps to reproduce, and your browser/device details so we can fix it quickly." },
               { title: "Feature Requests", desc: "Have an idea that could improve SwasthyaCare? We value user feedback and prioritize features based on community requests." },
-              { title: "Doctor Verification", desc: "If you're a registered doctor waiting for admin approval, or if you need to update your verified information, reach out to us." },
+              { title: "Provider Verification", desc: "If you're a registered doctor, clinic, or ambulance driver waiting for admin approval, or if you need to update verified info, reach out to us." },
               { title: "Account Issues", desc: "Trouble logging in, forgot your password, or need to update your email? We'll help you regain access to your account." },
               { title: "Partnership Inquiries", desc: "Are you a hospital, clinic chain, or healthcare organization interested in collaborating with SwasthyaCare? Let's talk." },
               { title: "Data & Privacy", desc: "Questions about how we handle your data, or requests to export/delete your information? We take privacy seriously and will assist promptly." },

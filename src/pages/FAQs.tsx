@@ -18,11 +18,11 @@ const faqData: FAQCategory[] = [
     items: [
       {
         question: "What is SwasthyaCare?",
-        answer: "SwasthyaCare is a free, open platform that provides real-time doctor availability information across India. It helps patients find which doctors are available near them — right now, today, or any day of the week — so they never have to waste a trip to a closed clinic. Doctors can register, manage their weekly schedules, mark leaves, and build a verified online presence."
+        answer: "SwasthyaCare is a free, open platform that provides real-time availability information across India. It helps patients find which doctors are available, which clinics are open, and where the nearest ambulance is — right now, today, or any day of the week. Providers can register, manage their weekly schedules, mark leaves, or broadcast their live locations."
       },
       {
         question: "Is SwasthyaCare free to use?",
-        answer: "Yes, SwasthyaCare is 100% free for both patients and doctors. There are no subscription fees, no premium tiers, no hidden charges, and no advertisements. Our mission is to make healthcare accessibility transparent for everyone."
+        answer: "Yes, SwasthyaCare is 100% free for patients, doctors, clinics, and ambulance drivers. There are no subscription fees, no premium tiers, no hidden charges, and no advertisements."
       },
       {
         question: "Do I need to download an app?",
@@ -42,24 +42,24 @@ const faqData: FAQCategory[] = [
     title: "For Patients",
     items: [
       {
-        question: "How do I find a doctor on SwasthyaCare?",
-        answer: "After creating a free patient account, you can browse all registered doctors on the homepage. Use the search bar to find doctors by name, or use the filters to narrow down by specialization (e.g., Cardiologist, Dermatologist), state, district, and availability status (Available, On Leave, Not Available)."
+        question: "How do I find a doctor, clinic, or ambulance?",
+        answer: "After creating a free patient account, you can browse all registered providers on the dashboard. Use the search bar or filters to narrow down by specialization, services offered, state, district, and availability status."
       },
       {
-        question: "How do I know if a doctor is available right now?",
-        answer: "Each doctor card shows real-time availability status. A green 'Available Now' badge means the doctor is currently available based on their weekly schedule. 'Available Today' means they have slots later today. The doctor profile page shows their full weekly schedule with exact timings."
+        question: "How do I know if a provider is available right now?",
+        answer: "Each card shows real-time availability status. A green 'Available Now' badge means the provider is currently available. For ambulances, you can track their exact location on the live map if they are available."
       },
       {
         question: "Can I book an appointment through SwasthyaCare?",
         answer: "No, SwasthyaCare does not handle bookings. We provide schedule and availability information so you can walk in or contact the doctor's clinic directly. This keeps the platform simple and free."
       },
       {
-        question: "What information can I see about a doctor?",
-        answer: "You can see the doctor's full name, specialization, hospital name, room number, location (state, district, area), years of experience, consultation fee, languages spoken, biography, profile photo, weekly availability schedule, and upcoming leaves."
+        question: "What information can I see about a provider?",
+        answer: "For doctors, you can see specialization, hospital, experience, fees, and schedule. For clinics, you can view services offered, operating hours, and location. For ambulances, you can view driver details, live location, and vehicle type."
       },
       {
-        question: "Are the doctors on SwasthyaCare verified?",
-        answer: "Yes. Every doctor who registers on SwasthyaCare goes through an admin verification process before their profile is made visible to patients. This ensures that only legitimate healthcare providers are listed on the platform."
+        question: "Are the providers on SwasthyaCare verified?",
+        answer: "Yes. Every doctor, clinic, and ambulance who registers on SwasthyaCare goes through an admin verification process before their profile is made visible to patients. This ensures authenticity."
       },
       {
         question: "Is my personal information safe as a patient?",
@@ -102,6 +102,32 @@ const faqData: FAQCategory[] = [
         question: "Can I update my profile later?",
         answer: "Absolutely. You can update your profile, schedule, leaves, and status at any time through your Doctor Dashboard. Changes are reflected in real-time to patients."
       },
+    ],
+  },
+  {
+    title: "For Clinics",
+    items: [
+      {
+        question: "How can I register my clinic?",
+        answer: "Select 'Clinic' as your role during signup. Provide your clinic name, location, facilities, and operating hours. Once verified by the admin, your clinic will be listed."
+      },
+      {
+        question: "How do I update clinic availability?",
+        answer: "In your Clinic Dashboard, you can toggle your live status between 'Open', 'Closed', or 'Full Capacity'. You can also update your regular weekly schedule."
+      }
+    ],
+  },
+  {
+    title: "For Ambulances",
+    items: [
+      {
+        question: "How do I register as an ambulance driver?",
+        answer: "Select 'Ambulance' as your role during signup. You will need to provide your vehicle number, license details, and operating regions. Admin verification is required."
+      },
+      {
+        question: "How does live tracking work?",
+        answer: "When you mark yourself as 'Available', SwasthyaCare requests location permissions on your device to broadcast your real-time GPS coordinates. This helps nearby patients locate you instantly in emergencies."
+      }
     ],
   },
   {
