@@ -75,13 +75,13 @@ export default function NearbyClinics() {
     let query = supabase
       .from("clinics")
       .select("*")
-      .eq("is_approved", true)
-      .not("latitude", "is", null)
-      .not("longitude", "is", null);
+      .eq("is_approved", true);
 
     if (!userLocation) {
       if (state && state !== "all") query = query.eq("state", state);
       if (district && district !== "all") query = query.ilike("district", `%${district}%`);
+    } else {
+      query = query.not("latitude", "is", null).not("longitude", "is", null);
     }
 
     const { data, error } = await query;
