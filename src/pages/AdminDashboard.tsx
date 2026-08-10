@@ -496,6 +496,12 @@ export default function AdminDashboard() {
     printWindow.document.close();
   };
 
+  const [selectedState, setSelectedState] = useState<string>("All");
+  const [selectedClinicState, setSelectedClinicState] = useState<string>("All");
+
+  const filteredDoctors = selectedState === "All" ? doctors : doctors.filter(d => d.state === selectedState);
+  const filteredClinics = selectedClinicState === "All" ? clinics : clinics.filter(c => c.state === selectedClinicState);
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-5xl">
       <h1 className="text-2xl font-bold mb-6 text-foreground">Admin Dashboard</h1>
@@ -507,16 +513,28 @@ export default function AdminDashboard() {
           <TabsTrigger value="users"><Users className="h-4 w-4 mr-1" />Users</TabsTrigger>
           <TabsTrigger value="seed"><Database className="h-4 w-4 mr-1" />Seed</TabsTrigger>
         </TabsList>
-
         <TabsContent value="doctors" className="mt-6">
           <Card>
-            <CardHeader><CardTitle>All Doctors ({doctors.length})</CardTitle></CardHeader>
+            <CardHeader className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <CardTitle>All Doctors ({filteredDoctors.length})</CardTitle>
+              <Select value={selectedState} onValueChange={setSelectedState}>
+                <SelectTrigger className="w-full md:w-[250px]">
+                  <SelectValue placeholder="Filter by State" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="All">All States</SelectItem>
+                  {INDIAN_STATES.map((state) => (
+                    <SelectItem key={state} value={state}>{state}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </CardHeader>
             <CardContent>
-              {loading ? <div className="h-32 bg-muted animate-pulse rounded-lg" /> : doctors.length === 0 ? (
-                <p className="text-muted-foreground text-center py-8">No doctors registered yet</p>
+              {loading ? <div className="h-32 bg-muted animate-pulse rounded-lg" /> : filteredDoctors.length === 0 ? (
+                <p className="text-muted-foreground text-center py-8">No doctors found for this state.</p>
               ) : (
                 <div className="space-y-4">
-                  {doctors.map((d) => (
+                  {filteredDoctors.map((d) => (
                     <div key={d.id} className="flex flex-col md:flex-row md:items-center justify-between bg-muted/30 border border-muted rounded-xl p-4 gap-4">
                       <div>
                         <div className="flex items-center gap-2">
@@ -575,13 +593,26 @@ export default function AdminDashboard() {
 
         <TabsContent value="clinics" className="mt-6">
           <Card>
-            <CardHeader><CardTitle>All Clinics ({clinics.length})</CardTitle></CardHeader>
+            <CardHeader className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <CardTitle>All Clinics ({filteredClinics.length})</CardTitle>
+              <Select value={selectedClinicState} onValueChange={setSelectedClinicState}>
+                <SelectTrigger className="w-full md:w-[250px]">
+                  <SelectValue placeholder="Filter by State" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="All">All States</SelectItem>
+                  {INDIAN_STATES.map((state) => (
+                    <SelectItem key={state} value={state}>{state}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </CardHeader>
             <CardContent>
-              {loading ? <div className="h-32 bg-muted animate-pulse rounded-lg" /> : clinics.length === 0 ? (
-                <p className="text-muted-foreground text-center py-8">No clinics registered yet</p>
+              {loading ? <div className="h-32 bg-muted animate-pulse rounded-lg" /> : filteredClinics.length === 0 ? (
+                <p className="text-muted-foreground text-center py-8">No clinics found for this state.</p>
               ) : (
                 <div className="space-y-4">
-                  {clinics.map((c) => (
+                  {filteredClinics.map((c) => (
                     <div key={c.id} className="flex flex-col md:flex-row md:items-center justify-between bg-muted/30 border border-muted rounded-xl p-4 gap-4">
                       <div>
                         <div className="flex items-center gap-2">
