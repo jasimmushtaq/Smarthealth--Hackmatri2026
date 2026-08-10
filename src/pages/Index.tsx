@@ -11,7 +11,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import Landing from "@/components/Landing";
 
 export default function Index() {
-  const { user } = useAuth();
+  const { user, role } = useAuth();
   const [doctors, setDoctors] = useState<any[]>([]);
   const [slots, setSlots] = useState<Record<string, any[]>>({});
   const [leaves, setLeaves] = useState<Record<string, any[]>>({});
@@ -54,7 +54,10 @@ export default function Index() {
 
     if (profile && profile.state) {
       setUserProfile(profile);
-      setStateFilter(profile.state);
+      // Only default the filter to user's state if they are not an admin
+      if (role !== "admin") {
+        setStateFilter(profile.state);
+      }
     }
 
     setLoading(false);
@@ -72,15 +75,15 @@ export default function Index() {
       .subscribe();
 
     return () => { supabase.removeChannel(channel); };
-  }, [user]);
+  }, [user, role]);
 
   if (!user) {
     return <Landing />;
   }
 
   const filtered = doctors.filter((d) => {
-    // Hard restrict to user's native state
-    if (userProfile?.state && d.state !== userProfile.state) return false;
+    // Hard restrict to user's native state for non-admins
+    if (userProfile?.state && role !== "admin" && d.state !== userProfile.state) return false;
 
     if (search && !d.full_name?.toLowerCase().includes(search.toLowerCase()) && !d.specialization?.toLowerCase().includes(search.toLowerCase())) return false;
     if (specFilter !== "all" && d.specialization !== specFilter) return false;
@@ -125,10 +128,10 @@ export default function Index() {
               {SPECIALIZATIONS.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
             </SelectContent>
           </Select>
-          <Select value={stateFilter} onValueChange={(val) => { setStateFilter(val); setDistrictFilter("all"); }} disabled={!!userProfile?.state}>
+          <Select value={stateFilter} onValueChange={(val) => { setStateFilter(val); setDistrictFilter("all"); }} disabled={!!userProfile?.state && role !== "admin"}>
             <SelectTrigger><SelectValue placeholder="State" /></SelectTrigger>
             <SelectContent>
-              {userProfile?.state ? (
+              {userProfile?.state && role !== "admin" ? (
                  <SelectItem value={userProfile.state}>{userProfile.state}</SelectItem>
               ) : (
                 <>
