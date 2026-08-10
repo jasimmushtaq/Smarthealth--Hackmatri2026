@@ -23,7 +23,7 @@ function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: numbe
 }
 
 export default function NearbyAmbulances() {
-  const { user } = useAuth();
+  const { user, role } = useAuth();
   const [ambulances, setAmbulances] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   
@@ -33,24 +33,28 @@ export default function NearbyAmbulances() {
   
   const [userLocation, setUserLocation] = useState<{lat: number, lng: number} | null>(null);
   const [locationLoading, setLocationLoading] = useState(false);
-  const [isLocationLocked, setIsLocationLocked] = useState(false);
+  const [userProfile, setUserProfile] = useState<any>(null);
 
   // Fetch user profile to set default location
   useEffect(() => {
     if (user) {
       supabase.from("profiles").select("state, district").eq("user_id", user.id).maybeSingle()
         .then(({ data }) => {
-          if (data?.state && data?.district) {
-            setState(data.state);
-            setDistrict(data.district);
-            setIsLocationLocked(true);
-          } else {
-            if (data?.state) setState(data.state);
-            if (data?.district) setDistrict(data.district);
+          if (data) {
+            setUserProfile(data);
+            if (role !== "admin") {
+              if (data.state) setState(data.state);
+              if (data.district) setDistrict(data.district);
+            } else {
+              if (data.state && !state) setState(data.state);
+              if (data.district && !district) setDistrict(data.district);
+            }
           }
         });
     }
-  }, [user]);
+  }, [user, role]);
+
+  const isLocked = role !== "admin" && !!userProfile?.state && !!userProfile?.district;
 
   const fetchAmbulances = async () => {
     setLoading(true);
@@ -110,7 +114,7 @@ export default function NearbyAmbulances() {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           });
-          if (!isLocationLocked) {
+          if (!isLocked) {
             setState("all");
             setDistrict("all");
           }
@@ -167,7 +171,7 @@ export default function NearbyAmbulances() {
             </div>
             <div className="space-y-2">
               <Label>Select State</Label>
-              <Select value={state} onValueChange={handleStateChange} disabled={isLocationLocked}>
+              <Select value={state} onValueChange={handleStateChange} disabled={isLocked}>
                 <SelectTrigger><SelectValue placeholder="All States" /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All States</SelectItem>
@@ -177,7 +181,7 @@ export default function NearbyAmbulances() {
             </div>
             <div className="space-y-2">
               <Label>Select District</Label>
-              <Select value={district || "all"} onValueChange={(val) => setDistrict(val === "all" ? "" : val)} disabled={isLocationLocked || !state || state === "all"}>
+              <Select value={district || "all"} onValueChange={(val) => setDistrict(val === "all" ? "" : val)} disabled={isLocked || !state || state === "all"}>
                 <SelectTrigger><SelectValue placeholder={state ? "All Districts" : "Select state first"} /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Districts</SelectItem>
