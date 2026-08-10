@@ -79,5 +79,9 @@ app.post('/api/send-email', async (req, res) => {
   }
 });
 
-const PORT = 3001;
-app.listen(PORT, () => console.log(`Backend server running on port ${PORT}`));
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = 3001;
+  app.listen(PORT, () => console.log(`Backend server running on port ${PORT}`));
+}
+
+export default app;

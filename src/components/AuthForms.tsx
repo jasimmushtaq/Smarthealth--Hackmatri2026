@@ -12,8 +12,8 @@ import { toast } from "sonner";
 import { INDIAN_STATES, STATE_DISTRICT_MAPPING } from "@/lib/states-data";
 
 export function LoginForm({ onToggle }: { onToggle: () => void }) {
-  const [email, setEmail] = useState("arbazmushtaq001@gmail.com");
-  const [password, setPassword] = useState("23341a05a4");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
