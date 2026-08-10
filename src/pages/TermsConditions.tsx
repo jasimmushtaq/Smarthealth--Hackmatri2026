@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, FileText } from "lucide-react";
 
 export default function TermsConditions() {
-  const lastUpdated = "June 17, 2026";
+  const lastUpdated = "August 9, 2026";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">

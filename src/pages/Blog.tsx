@@ -24,7 +24,7 @@ const blogPosts: BlogPost[] = [
       "SwasthyaCare provides a simple but powerful solution: a free platform where doctors can publish their weekly availability schedules, and patients can check that schedule before leaving home. No appointment booking, no complex features — just transparent, real-time availability information.",
       "We believe that healthcare transparency is a basic right, not a premium feature. That's why SwasthyaCare is and will always remain free for both patients and doctors."
     ],
-    date: "June 15, 2026",
+    date: "August 9, 2026",
     readTime: "4 min read",
     category: "Our Story",
     categoryColor: "bg-blue-100 text-blue-700",
@@ -43,7 +43,7 @@ const blogPosts: BlogPost[] = [
       "Step 6: Visit with Confidence — Now you know exactly when and where to go. No wasted trips, no surprise closures.",
       "Pro Tip: Bookmark doctors you visit frequently so you can quickly check their status next time!"
     ],
-    date: "June 12, 2026",
+    date: "August 9, 2026",
     readTime: "5 min read",
     category: "Guide",
     categoryColor: "bg-emerald-100 text-emerald-700",
@@ -64,7 +64,7 @@ const blogPosts: BlogPost[] = [
       "6. Reduce Phone Calls — Instead of fielding calls about your availability, patients can check it themselves on SwasthyaCare.",
       "Getting started takes less than 5 minutes. Sign up, complete your profile, and wait for admin verification. Once approved, patients in your area will be able to find you instantly."
     ],
-    date: "June 8, 2026",
+    date: "August 9, 2026",
     readTime: "6 min read",
     category: "For Doctors",
     categoryColor: "bg-violet-100 text-violet-700",
@@ -86,7 +86,7 @@ const blogPosts: BlogPost[] = [
       "By supporting 22+ languages in doctor profiles, covering all states and union territories, and keeping the platform completely free, SwasthyaCare is designed to be inclusive and accessible.",
       "The journey is long, but every step toward healthcare transparency matters. We believe that informed patients make better healthcare decisions, and that starts with knowing who's available to help."
     ],
-    date: "June 3, 2026",
+    date: "August 9, 2026",
     readTime: "7 min read",
     category: "Healthcare",
     categoryColor: "bg-amber-100 text-amber-700",
@@ -108,7 +108,7 @@ const blogPosts: BlogPost[] = [
       "9. Follow Up on Test Results — If the doctor orders tests, schedule a follow-up to discuss results. Don't assume 'no news is good news' — always follow up.",
       "10. Keep Records — After each visit, note down the doctor's advice, prescribed medications, and follow-up dates. A simple notebook or phone note works great."
     ],
-    date: "May 28, 2026",
+    date: "August 9, 2026",
     readTime: "5 min read",
     category: "Health Tips",
     categoryColor: "bg-rose-100 text-rose-700",
