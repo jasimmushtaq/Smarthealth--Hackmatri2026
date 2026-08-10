@@ -63,6 +63,8 @@ export default function NearbyAmbulances() {
     if (!userLocation) {
       if (state && state !== "all") query = query.eq("state", state);
       if (district && district !== "all") query = query.ilike("district", `%${district}%`);
+    } else {
+      query = query.not("latitude", "is", null).not("longitude", "is", null);
     }
     if (filterType !== "all") query = query.eq("provider_type", filterType);
     
