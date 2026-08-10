@@ -102,6 +102,7 @@ export function DoctorProfileForm({ doctor, userId, onSave }: Props) {
     setSaving(true);
     const payload = {
       ...form,
+      gender: form.gender || null,
       experience_years: parseInt(form.experience_years) || 0,
       consultation_fee: parseFloat(form.consultation_fee) || 0,
       user_id: userId,
