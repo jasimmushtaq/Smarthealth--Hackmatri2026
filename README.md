@@ -33,7 +33,7 @@ To run this project locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/jasimmushtaq/smarthealth-hackmatrix2026.git
+   git clone https://github.com/sumaiahanjumanjum-rgb/Smarthealth--Hackmatri2026.git
    ```
 2. Navigate into the project directory:
    ```bash
