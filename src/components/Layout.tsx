@@ -4,6 +4,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Stethoscope, LogOut, User, LayoutDashboard, Github, Linkedin, Menu, MapPin, Ambulance, ArrowLeft } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { Chatbot } from "./Chatbot";
 
 export function Layout({ children }: { children: ReactNode }) {
   const { user, role, signOut } = useAuth();
@@ -177,6 +178,7 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
       </footer>
+      <Chatbot />
     </div>
   );
 }

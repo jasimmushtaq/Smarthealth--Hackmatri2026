@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Headset band -->
+  <path d="M 15 50 A 35 35 0 0 1 85 50" fill="none" stroke="#1e293b" stroke-width="8"/>
+  <rect x="42" y="11" width="16" height="8" rx="2" fill="#2563eb" />
+  
+  <!-- Head -->
+  <rect x="20" y="25" width="60" height="45" rx="20" fill="#e2e8f0" />
+  
+  <!-- Face/Visor -->
+  <rect x="25" y="35" width="50" height="25" rx="12" fill="#1e293b" />
+  
+  <!-- Eyes -->
+  <circle cx="40" cy="47" r="4" fill="#4ade80" />
+  <circle cx="60" cy="47" r="4" fill="#4ade80" />
+  
+  <!-- Ear cups -->
+  <rect x="10" y="35" width="12" height="25" rx="4" fill="#2563eb" />
+  <rect x="78" y="35" width="12" height="25" rx="4" fill="#2563eb" />
+  
+  <!-- Mic arm -->
+  <path d="M 82 55 L 82 72 A 5 5 0 0 1 77 77 L 65 77" fill="none" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Mic -->
+  <rect x="53" y="74" width="12" height="6" rx="3" fill="#1e293b" />
+  
+  <!-- Body (shoulders) -->
+  <path d="M 40 70 L 60 70 L 60 75 L 40 75 Z" fill="#cbd5e1" />
+  <rect x="25" y="75" width="50" height="25" rx="10" fill="#e2e8f0" />
+</svg>
