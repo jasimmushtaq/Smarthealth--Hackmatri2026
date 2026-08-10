@@ -1,8 +1,5 @@
 # Project Title: SwasthyaCare
 
-## Team Name
-[Your Team Name]
-
 ## Problem Statement
 Accessing reliable healthcare services—such as booking doctor appointments, finding nearby clinics, or calling an ambulance in an emergency—is often fragmented and time-consuming. Patients struggle to navigate different platforms for various healthcare needs, leading to delays in critical care.
 
