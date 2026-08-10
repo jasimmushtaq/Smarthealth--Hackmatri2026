@@ -253,7 +253,7 @@ export function AmbulanceOnboardingForm({ onComplete, initialData = {} }: { onCo
         handleChange('longitude', pos.coords.longitude.toString());
         toast.success("Location fetched!");
       },
-      (err) => toast.error("Failed to get location.")
+      (err) => toast.error("Failed to get location. Please ensure location permissions are allowed in your browser settings.")
     );
   };
 

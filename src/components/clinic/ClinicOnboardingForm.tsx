@@ -168,9 +168,7 @@ export function ClinicOnboardingForm({ clinic, onComplete }: { clinic: any, onCo
         }));
         toast.success("Location fetched successfully!");
       },
-      (error) => {
-        toast.error("Failed to get location.");
-      }
+      (err) => toast.error("Failed to get location. Please ensure location permissions are allowed in your browser settings.")
     );
   };
 
