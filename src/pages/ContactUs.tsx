@@ -17,7 +17,7 @@ export default function ContactUs() {
     setSending(true);
 
     try {
-      const response = await fetch("http://localhost:3001/api/send-email", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
