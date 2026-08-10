@@ -1,0 +1,97 @@
+datasource db {
+  provider = "postgresql"
+  schemas  = ["public", "auth"]
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+enum AppRole {
+  admin
+  doctor
+  patient
+
+  @@map("app_role")
+  @@schema("public")
+}
+
+model UserRole {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  role      AppRole
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  @@unique([userId, role])
+  @@map("user_roles")
+  @@schema("public")
+}
+
+model Profile {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId    String   @unique @map("user_id") @db.Uuid
+  fullName  String?  @map("full_name")
+  state     String?
+  district  String?
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  @@map("profiles")
+  @@schema("public")
+}
+
+model Doctor {
+  id              String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId          String             @unique @map("user_id") @db.Uuid
+  fullName        String             @default("") @map("full_name")
+  gender          String?
+  specialization  String?
+  hospitalName    String?            @map("hospital_name")
+  roomNumber      String?            @map("room_number")
+  state           String?
+  district        String?
+  area            String?
+  experienceYears Int                @default(0) @map("experience_years")
+  bio             String?
+  consultationFee Decimal            @default(0) @map("consultation_fee") @db.Decimal(10, 2)
+  languages       String[]           @default([])
+  profileImageUrl String?            @map("profile_image_url")
+  status          String             @default("available")
+  isApproved      Boolean            @default(false) @map("is_approved")
+  createdAt       DateTime           @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime           @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+  slots           AvailabilitySlot[]
+  leaves          DoctorLeave[]
+
+  @@map("doctors")
+  @@schema("public")
+}
+
+model AvailabilitySlot {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  doctorId  String   @map("doctor_id") @db.Uuid
+  doctor    Doctor   @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  dayOfWeek Int      @map("day_of_week")
+  startTime String   @map("start_time")
+  endTime   String   @map("end_time")
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz
+
+  @@map("availability_slots")
+  @@schema("public")
+}
+
+model DoctorLeave {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  doctorId  String   @map("doctor_id") @db.Uuid
+  doctor    Doctor   @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  startDate DateTime @map("start_date") @db.Date
+  endDate   DateTime @map("end_date") @db.Date
+  reason    String?
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz
+
+  @@map("doctor_leaves")
+  @@schema("public")
+}
